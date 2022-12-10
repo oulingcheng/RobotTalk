@@ -1,0 +1,8 @@
+requests
+fastapi
+uvicorn
+numpy==1.21.2
+torch==1.9.1
+torchvision==0.10.1
+paddleocr==2.5.0
+easydict==1.9.0

@@ -1,0 +1,10 @@
+2022-12-10 22:16:34,256 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-10 22:16:34,272 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-10 22:20:41,589 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-10 22:20:41,603 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-10 22:23:52,038 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-10 22:23:52,053 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-10 22:23:57,672 robot_server.py: INFO: req content： content='你好呀' req_id='111222' pic_url='xxx'
+2022-12-10 22:25:09,299 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-10 22:25:09,320 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-10 22:25:11,324 robot_server.py: INFO: req content： content='你好呀' req_id='111222'
