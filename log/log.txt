@@ -8,3 +8,140 @@
 2022-12-10 22:25:09,299 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
 2022-12-10 22:25:09,320 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
 2022-12-10 22:25:11,324 robot_server.py: INFO: req content： content='你好呀' req_id='111222'
+2022-12-11 13:00:44,302 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 13:15:27,472 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 13:15:38,263 robot_server.py: INFO: req content： content='你好呀' req_id='111222'
+2022-12-11 14:03:32,598 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 14:16:15,180 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 14:28:45,449 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 14:29:32,809 robot_server.py: INFO: req content： content='你好呀' req_id='111222'
+2022-12-11 14:31:00,403 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 15:20:23,289 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:21:06,816 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:21:32,779 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:27:47,241 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:28:40,018 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:28:50,291 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:28:59,484 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 15:30:35,369 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:30:38,743 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:30:46,343 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 15:35:58,353 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:35:59,470 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:36:02,079 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 15:36:50,795 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:36:51,983 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:36:54,257 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 15:36:54,261 robot_server.py: ERROR: Traceback (most recent call last):
+  File "D:\ai\python_code\RobotTalk\robot_server.py", line 50, in read_item
+    res = content_dialog.predict(content)
+  File "D:\ai\python_code\RobotTalk\JuggingFace\content_dialog.py", line 37, in predict
+    output = self.model(torch.tensor(input_ids))
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\torch\nn\modules\module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\models\bert\modeling_bert.py", line 975, in forward
+    batch_size, seq_length = input_shape
+ValueError: not enough values to unpack (expected 2, got 1)
+
+2022-12-11 15:37:12,204 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:37:13,245 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:37:15,481 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 15:37:15,485 robot_server.py: ERROR: Traceback (most recent call last):
+  File "D:\ai\python_code\RobotTalk\robot_server.py", line 50, in read_item
+    res = content_dialog.predict(content)
+  File "D:\ai\python_code\RobotTalk\JuggingFace\content_dialog.py", line 37, in predict
+    output = self.model(input_ids)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\torch\nn\modules\module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\models\bert\modeling_bert.py", line 969, in forward
+    input_shape = input_ids.size()
+AttributeError: 'list' object has no attribute 'size'
+
+2022-12-11 15:40:01,591 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:40:02,493 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:40:06,012 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 15:40:06,016 robot_server.py: ERROR: Traceback (most recent call last):
+  File "D:\ai\python_code\RobotTalk\robot_server.py", line 50, in read_item
+    res = content_dialog.predict(content)
+  File "D:\ai\python_code\RobotTalk\JuggingFace\content_dialog.py", line 38, in predict
+    output = self.model.generate(input_ids, max_length=1024, top_p=0.9, top_k=40)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\torch\autograd\grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\generation\utils.py", line 1295, in generate
+    self._validate_model_class()
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\generation\utils.py", line 973, in _validate_model_class
+    raise TypeError(exception_message)
+TypeError: The current model class (BertForSequenceClassification) is not compatible with `.generate()`, as it doesn't have a language model head. Please use one of the following classes instead: {'BertLMHeadModel'}
+
+2022-12-11 15:56:23,238 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 15:56:25,179 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 17:33:37,854 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 17:33:37,856 robot_server.py: ERROR: Traceback (most recent call last):
+  File "D:\ai\python_code\RobotTalk\robot_server.py", line 50, in read_item
+    res = content_dialog.predict(content)
+  File "D:\ai\python_code\RobotTalk\JuggingFace\content_dialog.py", line 42, in predict
+    output = self.model.generate(input_ids, max_length=1024, top_p=0.9, top_k=40)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\torch\autograd\grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\generation\utils.py", line 1295, in generate
+    self._validate_model_class()
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\generation\utils.py", line 973, in _validate_model_class
+    raise TypeError(exception_message)
+TypeError: The current model class (BertForSequenceClassification) is not compatible with `.generate()`, as it doesn't have a language model head. Please use one of the following classes instead: {'BertLMHeadModel'}
+
+2022-12-11 17:34:07,537 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 17:34:08,474 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 17:34:22,819 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 17:34:22,942 robot_server.py: ERROR: Traceback (most recent call last):
+  File "D:\ai\python_code\RobotTalk\robot_server.py", line 50, in read_item
+    res = content_dialog.predict(content)
+  File "D:\ai\python_code\RobotTalk\JuggingFace\content_dialog.py", line 43, in predict
+    cnt_sta = self.tokenizer.decode(output[0], skip_special_tokens=True)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\tokenization_utils_base.py", line 3468, in decode
+    return self._decode(
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\tokenization_utils.py", line 931, in _decode
+    filtered_tokens = self.convert_ids_to_tokens(token_ids, skip_special_tokens=skip_special_tokens)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\tokenization_utils.py", line 906, in convert_ids_to_tokens
+    index = int(index)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'
+
+2022-12-11 17:34:47,347 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 17:34:48,271 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 17:34:51,219 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 17:34:51,320 robot_server.py: ERROR: Traceback (most recent call last):
+  File "D:\ai\python_code\RobotTalk\robot_server.py", line 50, in read_item
+    res = content_dialog.predict(content)
+  File "D:\ai\python_code\RobotTalk\JuggingFace\content_dialog.py", line 43, in predict
+    cnt_sta = self.tokenizer.decode(output, skip_special_tokens=True)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\tokenization_utils_base.py", line 3468, in decode
+    return self._decode(
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\tokenization_utils.py", line 931, in _decode
+    filtered_tokens = self.convert_ids_to_tokens(token_ids, skip_special_tokens=skip_special_tokens)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\tokenization_utils.py", line 906, in convert_ids_to_tokens
+    index = int(index)
+ValueError: invalid literal for int() with base 10: 'last_hidden_state'
+
+2022-12-11 17:36:37,122 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 17:36:38,094 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 17:36:46,551 robot_server.py: INFO: req content： content='hello' req_id='111222'
+2022-12-11 17:36:46,686 robot_server.py: ERROR: Traceback (most recent call last):
+  File "D:\ai\python_code\RobotTalk\robot_server.py", line 50, in read_item
+    res = content_dialog.predict(content)
+  File "D:\ai\python_code\RobotTalk\JuggingFace\content_dialog.py", line 44, in predict
+    cnt_sta = self.tokenizer.decode(output, skip_special_tokens=True)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\tokenization_utils_base.py", line 3468, in decode
+    return self._decode(
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\tokenization_utils.py", line 931, in _decode
+    filtered_tokens = self.convert_ids_to_tokens(token_ids, skip_special_tokens=skip_special_tokens)
+  File "D:\ai\conda\condaexe\envs\pytorchGPU\lib\site-packages\transformers\tokenization_utils.py", line 906, in convert_ids_to_tokens
+    index = int(index)
+ValueError: invalid literal for int() with base 10: 'last_hidden_state'
+
+2022-12-11 17:43:51,374 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 17:44:58,682 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 20:34:55,729 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 23:08:34,937 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 23:10:06,551 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 23:10:55,350 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-11 23:17:04,604 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-12 01:48:13,320 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu

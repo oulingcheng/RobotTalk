@@ -50,6 +50,7 @@ def read_item(dialog: Dialog):  # todo 参数检查
         res = content_dialog.predict(content)
         return {"code": 200, "message": "success", "result": res, 'req_id': req_id}
     except:
+        logger.error(traceback.format_exc())
         return {"code": 500, "message": traceback.format_exc(), "result": "Error", 'req_id': req_id}
 
 

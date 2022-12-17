@@ -1,8 +1,19 @@
 requests
 fastapi
 uvicorn
-numpy==1.21.2
-torch==1.9.1
-torchvision==0.10.1
-paddleocr==2.5.0
-easydict==1.9.0
+jieba
+colorlog
+colorama
+seqeval
+dill<0.3.5
+multiprocess<=0.70.12.2
+datasets >= 2.0.0
+tqdm
+paddlefsl
+sentencepiece
+huggingface_hub>=0.10.1
+paddle2onnx
+protobuf>=3.1.0, <=3.20.0
+visualdl
+typer
+rich
