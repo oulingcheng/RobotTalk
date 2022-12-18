@@ -2,7 +2,6 @@ import paddle.nn as nn
 import paddle
 import paddlenlp as ppnlp
 import paddle.nn.functional as F
-import configs as cfg
 
 
 class SimCSE(nn.Layer):

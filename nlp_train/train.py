@@ -4,7 +4,6 @@ import time
 # 加载飞桨的API
 import paddle
 # 加载PaddleNLP的API
-import configs as cfg
 import paddlenlp as ppnlp
 # 加载系统的API
 from functools import partial
@@ -15,6 +14,7 @@ from nlp_train.wr import word_repetition
 from nlp_train.data import read_text_pair
 from nlp_train.sim_cse import SimCSE
 from nlp_train.data_handle import convert_example, create_dataloader
+from configs import cfg
 
 # 在GPU环境下运行
 paddle.set_device("gpu")
@@ -26,8 +26,7 @@ train_ds = load_dataset(read_text_pair, data_path=cfg.train_set_file, lazy=False
 # train_ds = load_dataset(read_simcse_text, data_path=train_set_file, lazy=False)
 
 # 使用rocketqa开放领域的问答模型
-model_name_or_path = 'rocketqa-zh-base-query-encoder'
-tokenizer = ppnlp.transformers.ErnieTokenizer.from_pretrained(model_name_or_path)
+tokenizer = ppnlp.transformers.ErnieTokenizer.from_pretrained(cfg.model_path)
 
 # partial赋默认的值
 trans_func = partial(
