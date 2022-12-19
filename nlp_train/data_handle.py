@@ -26,7 +26,7 @@ def convert_example(example, tokenizer, max_seq_length=512, do_evalute=False):
 
 def create_dataloader(dataset,
                       mode='train',
-                      batch_size=1,
+                      batch_size=64,
                       batchify_fn=None,
                       trans_fn=None):
     if trans_fn:

@@ -17,3 +17,4 @@ def read_simcse_text(data_path):
         for line in f:
             data = line.rstrip()
             yield {'text_a': data, 'text_b': data}
+

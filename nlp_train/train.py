@@ -11,7 +11,7 @@ from paddlenlp.data import Tuple, Pad
 from paddlenlp.datasets import load_dataset
 from paddlenlp.transformers import LinearDecayWithWarmup
 from nlp_train.wr import word_repetition
-from nlp_train.data import read_text_pair
+from nlp_train.data import read_text_pair, read_simcse_text
 from nlp_train.sim_cse import SimCSE
 from nlp_train.data_handle import convert_example, create_dataloader
 from configs import cfg
@@ -20,10 +20,14 @@ from configs import cfg
 paddle.set_device("gpu")
 
 # 加载数据集，数据增强：
-train_ds = load_dataset(read_text_pair, data_path=cfg.train_set_file, lazy=False)
+train_ds = load_dataset(read_simcse_text, data_path=cfg.train_set_file, lazy=False)
 # 加载训练集， 无监督
 # train_set_file='baoxian/train.csv'
 # train_ds = load_dataset(read_simcse_text, data_path=train_set_file, lazy=False)
+
+# 输出三条数据
+for i  in range(3):
+    print(train_ds[i])
 
 # 使用rocketqa开放领域的问答模型
 tokenizer = ppnlp.transformers.ErnieTokenizer.from_pretrained(cfg.model_path)

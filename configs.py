@@ -23,7 +23,7 @@ cfg['train_set_file'] = '/ai/python_code/RobotTalk/nlp_train/data/baoxianzhidao_
 # 关键参数
 cfg['scale'] = 20  # 推荐值: 10 ~ 30
 cfg['margin'] = 0.1  # 推荐值: 0.0 ~ 0.2
-cfg['epochs'] = 3
+cfg['epochs'] = 30
 
 # 学习率设置
 cfg['learning_rate'] = 5E-5
@@ -33,9 +33,10 @@ cfg['ave_steps'] = 10
 
 cfg['output_emb_size'] = 256  # 可以根据实际情况进行设置
 cfg['max_seq_length'] = 64  # 序列的最大的长度，根据数据集的情况进行设置
-cfg['batch_size'] = 64  # batch_size越大，效果会更好
+cfg['batch_size'] = 8  # batch_size越大，效果会更好
 cfg['dup_rate'] = 0.3  # 建议设置在0~0.3之间
-cfg['save_dir'] = './nlp_train/models'
+cfg['save_dir'] = './models'
+cfg['save_steps'] = 1000
 
 
 
