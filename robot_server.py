@@ -8,6 +8,7 @@ from fastapi import FastAPI
 from logger import logger
 from pydantic import BaseModel
 from JuggingFace.content_dialog import ContentDialog
+from model.qa_qq import get_most_similar_answer
 
 # 指定用几张gpu和gpu设备号
 gpu_id = os.getenv('GPU_ID')
@@ -47,7 +48,8 @@ def read_item(dialog: Dialog):  # todo 参数检查
     req_id = dialog.req_id
     try:
         # 模型或者逻辑处理
-        res = content_dialog.predict(content)
+        res = get_most_similar_answer(content)
+        # res = content_dialog.predict(content)
         return {"code": 200, "message": "success", "result": res, 'req_id': req_id}
     except:
         logger.error(traceback.format_exc())

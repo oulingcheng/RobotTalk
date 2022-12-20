@@ -13,6 +13,7 @@ cfg['weights'] = './model/xxx.pt'
 cfg['model'] = './JuggingFace/model/ernie_3.0_x_base_ch_open'
 cfg['gpu_id'] = 0
 cfg['model_path'] = 'rocketqa-zh-base-query-encoder'
+cfg['nlp_model_path'] = '/ai/python_code/RobotTalk/nlp_dec/models/model_15690'
 #cfg['model_path'] = '/ai/python_code/RobotTalk/nlp_train/checkpoint/ERNIE_VIL2_BASE_ViT.pdparams'
 cfg['train_set_file'] = '/ai/python_code/RobotTalk/nlp_train/data/baoxianzhidao_filter.csv'
 
@@ -33,10 +34,10 @@ cfg['ave_steps'] = 10
 
 cfg['output_emb_size'] = 256  # 可以根据实际情况进行设置
 cfg['max_seq_length'] = 64  # 序列的最大的长度，根据数据集的情况进行设置
-cfg['batch_size'] = 8  # batch_size越大，效果会更好
+cfg['batch_size'] = 16  # batch_size越大，效果会更好
 cfg['dup_rate'] = 0.3  # 建议设置在0~0.3之间
 cfg['save_dir'] = './models'
-cfg['save_steps'] = 1000
+cfg['save_steps'] = 200
 
 
 
@@ -46,4 +47,5 @@ cfg.data = os.path.join(base_dir, cfg.data)
 cfg.weights = os.path.join(base_dir, cfg.weights)
 cfg.model = os.path.join(base_dir, cfg.model)
 cfg.train_set_file = os.path.join(base_dir, cfg.train_set_file)
+cfg.nlp_model_path = os.path.join(base_dir, cfg.nlp_model_path)
 #cfg.model_path =  os.path.join(base_dir, cfg.model_path)
