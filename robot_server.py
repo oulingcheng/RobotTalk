@@ -9,6 +9,7 @@ from logger import logger
 from pydantic import BaseModel
 from JuggingFace.content_dialog import ContentDialog
 from model.qa_qq import get_most_similar_answer
+from model.qa_qq import search_related_questions
 
 # 指定用几张gpu和gpu设备号
 gpu_id = os.getenv('GPU_ID')
@@ -56,6 +57,21 @@ def read_item(dialog: Dialog):  # todo 参数检查
         return {"code": 500, "message": traceback.format_exc(), "result": "Error", 'req_id': req_id}
 
 
+@app.post("/association")
+def association(dialog: Dialog):  # todo 参数检查
+    logger.info(f'req content： {dialog}')
+    content = dialog.content
+    req_id = dialog.req_id
+    try:
+        # 模型或者逻辑处理
+        res = search_related_questions(content)
+        # res = content_dialog.predict(content)
+        return {"code": 200, "message": "success", "result": res, 'req_id': req_id}
+    except:
+        logger.error(traceback.format_exc())
+        return {"code": 500, "message": traceback.format_exc(), "result": "Error", 'req_id': req_id}
+
+
 # 服务启动方法
 if __name__ == '__main__':
-    uvicorn.run('robot_server:app', host='0.0.0.0', port=8080)
+    uvicorn.run('robot_server:app', host='0.0.0.0', port=80)

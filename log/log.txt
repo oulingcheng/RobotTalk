@@ -145,3 +145,28 @@ ValueError: invalid literal for int() with base 10: 'last_hidden_state'
 2022-12-11 23:10:55,350 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
 2022-12-11 23:17:04,604 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
 2022-12-12 01:48:13,320 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-20 17:55:09,398 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-20 17:55:09,413 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-20 22:38:29,518 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-20 22:38:29,525 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-20 22:41:30,950 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-20 22:41:30,957 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-20 22:52:48,943 robot_server.py: INFO: req content： content='吃饭了吗' req_id='1'
+2022-12-20 22:53:37,371 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:55,360 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:56,036 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:56,599 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:57,101 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:57,572 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:58,004 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:58,456 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:58,937 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:59,388 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:56:59,858 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:57:00,306 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:57:00,786 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:57:01,301 robot_server.py: INFO: req content： content='吃货' req_id='1'
+2022-12-20 22:57:37,923 robot_server.py: INFO: req content： content='发大幅降低拉风金德拉克放假啦' req_id='1'
+2022-12-20 23:10:57,901 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-20 23:10:57,913 robot_server.py: INFO: set CUDA_VISIBLE_DEVICES=cpu
+2022-12-20 23:12:18,896 robot_server.py: INFO: req content： content='吃货' req_id='1'
