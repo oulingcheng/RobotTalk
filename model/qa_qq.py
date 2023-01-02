@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 import logging
 from fastapi import FastAPI
+import configs as cfg
 import uvicorn
 import similarities
 import math
@@ -22,7 +23,7 @@ question_file_list = [
     'data/standardQA/standard_QA.csv',
     'data/standardQA/product_QA_1.csv'
 ]
-abs_path = '/data/xianjiacheng/projects/qq'
+abs_path = cfg.base_dir
 
 question_list = []
 q2a = {}
