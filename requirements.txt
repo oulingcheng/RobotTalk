@@ -1,7 +1,7 @@
 requests
-fastapi~=0.88.0
-uvicorn~=0.20.0
-jieba
+fastapi~=0.83.0
+uvicorn~=0.17.0
+jieba~=0.42.1
 colorlog
 colorama
 seqeval
@@ -11,15 +11,18 @@ datasets >= 2.0.0
 tqdm
 paddlefsl
 sentencepiece
-huggingface_hub>=0.10.1
+huggingface_hub>=0.4.0
 paddle2onnx
 protobuf>=3.1.0, <=3.20.0
 visualdl
 typer
 rich
 PyYAML~=6.0
-numpy~=1.21.2
+numpy==1.19.5
 paddlenlp~=2.4.5
 easydict~=1.9
-torch~=1.12.1
-pydantic~=1.10.2
+torch~=1.10.2
+pydantic~=1.9.2
+similarities~=1.0.4
+pandas~=1.1.5
+starlette~=0.19.1
