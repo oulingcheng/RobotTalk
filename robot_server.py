@@ -9,9 +9,17 @@ from logger import logger
 from pydantic import BaseModel
 from model.qa_qq import get_most_similar_answer
 from model.qa_qq import search_related_questions
-from nlp_dec.simcse_qa import simcse_FAQ
 import requests
 import json
+import threading
+
+
+# from nlp_dec.simcse_qa import simcse_FAQ
+
+
+def simcse_FAQ():
+    return ""
+
 
 # from model.chitchat import chat_response
 
@@ -59,6 +67,22 @@ class Dialog(BaseModel):
     # 图片链接
     # pic_url: str
 
+
+class MyThread(threading.Thread):  # 重写threading.Thread类，加入获取返回值的函数
+
+    def __init__(self, req: Dialog):
+        threading.Thread.__init__(self)
+        self.dialog = req
+        self.result = ''
+
+    def run(self):  # 新加入的函数，该函数目的：
+        self.result = chitchat(self.dialog)  # ①。调craw(arg)函数，并将初试化的url以参数传递——实现爬虫功能
+        # ②。并获取craw(arg)函数的返回值存入本类的定义的值result中
+
+    def get_result(self):  # 新加入函数，该函数目的：返回run()函数得到的result
+        return self.result
+
+
 # 对话接口
 @app.post("/dialog")
 def dialog(req: Dialog):  # todo 参数检查
@@ -66,10 +90,20 @@ def dialog(req: Dialog):  # todo 参数检查
     content = req.content
     req_id = req.req_id
     try:
+        thread = MyThread(req)
+        thread.start()
+
         # 模型或者逻辑处理
         res = get_most_similar_answer(content)
-        # res = content_dialog.predict(content)
-        return {"code": 200, "message": "success", "result": res, 'req_id': req_id}
+        if res[0].get('score', 0) > 0.9:
+            return {"code": 200, "message": "success", "result": res, 'req_id': req_id}
+        else:
+            thread.join()
+            result = thread.get_result()
+            result = result['result'].replace(' ', '')
+            return {"code": 200, "message": "success", "result": [{"answer": result,
+                                                                   }], 'req_id': req_id}
+
     except:
         logger.error(traceback.format_exc())
         return {"code": 500, "message": traceback.format_exc(), "result": "Error", 'req_id': req_id}
@@ -84,8 +118,7 @@ def association(req: Dialog):  # todo 参数检查
     try:
         # 模型或者逻辑处理
         res = search_related_questions(content)
-        # res = content_dialog.predict(content)
-        return {"code": 200, "message": "success", "result": res, 'req_id': req_id}
+        return {"code": 200, "message": "success", "result": res[:10], 'req_id': req_id}
     except:
         logger.error(traceback.format_exc())
         return {"code": 500, "message": traceback.format_exc(), "result": "Error", 'req_id': req_id}
@@ -108,10 +141,10 @@ def knowledge(req: Dialog):  # todo 参数检查
 
 # 纯闲谈
 @app.post("/chitchat")
-def chitchat(dialog: Dialog):  # todo 参数检查
-    logger.info(f'chitchat req content： {dialog}')
-    content = dialog.content
-    req_id = dialog.req_id
+def chitchat(req: Dialog):  # todo 参数检查
+    logger.info(f'chitchat req content： {req}')
+    content = req.content
+    req_id = req.req_id
     try:
         headers = {'Content-Type': 'application/json'}
         req_json = {'req_id': req_id, 'content': content}
@@ -125,6 +158,7 @@ def chitchat(dialog: Dialog):  # todo 参数检查
     except Exception as e:
         logger.error(traceback.format_exc())
         return {"code": 500, "message": traceback.format_exc(), "result": "Error", 'req_id': req_id}
+
 
 # 对话接口
 @app.post("/simces")
@@ -140,6 +174,7 @@ def read_item(dialog: Dialog):  # todo 参数检查
     except:
         logger.error(traceback.format_exc())
         return {"code": 500, "message": traceback.format_exc(), "result": "Error", 'req_id': req_id}
+
 
 # 服务启动方法
 if __name__ == '__main__':

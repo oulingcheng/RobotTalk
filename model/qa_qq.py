@@ -21,7 +21,6 @@ question_file_list = [
     'data/standardQA/common_QA.csv',
     'data/standardQA/product_QA_1.csv',
     'data/standardQA/standard_QA.csv',
-    'data/standardQA/product_QA_1.csv'
 ]
 abs_path = cfg.base_dir
 
